@@ -17,30 +17,25 @@ body{
     color: #e5e7eb;
 }
 
-/* CONTENEDOR */
 .container{
     animation: fadeIn 0.6s ease;
 }
 
-/* CARDS */
 .card{
     background: #0f172a;
     border: 1px solid #1e293b;
     border-radius: 16px;
 }
 
-/* FORMULARIO */
 .form-card{
     border-left: 4px solid #22c55e;
 }
 
-/* TEXTO FORMULARIO BLANCO */
 .form-card label,
 .form-card h5{
     color: #ffffff;
 }
 
-/* INPUTS */
 input{
     background: #020617 !important;
     border: 1px solid #334155 !important;
@@ -58,7 +53,6 @@ input::placeholder{
     color: #94a3b8 !important;
 }
 
-/* BOTONES */
 .btn-primary{
     background: #22c55e;
     border: none;
@@ -70,7 +64,6 @@ input::placeholder{
     background: #16a34a;
 }
 
-/* EXPORTAR */
 .btn-warning{
     background: #0ea5e9;
     color: white;
@@ -82,7 +75,6 @@ input::placeholder{
     background: #0284c7;
 }
 
-/* BORRAR */
 .btn-danger{
     background: #ef4444;
     border: none;
@@ -93,7 +85,6 @@ input::placeholder{
     background: #dc2626;
 }
 
-/* EDITAR */
 .btn-edit{
     background: #a855f7;
     color: white;
@@ -105,7 +96,6 @@ input::placeholder{
     background: #9333ea;
 }
 
-/* TABLA */
 .table{
     color: #e5e7eb;
 }
@@ -123,7 +113,6 @@ input::placeholder{
     background: rgba(34,197,94,0.05);
 }
 
-/* TITULOS */
 h1,h3{
     color: #22c55e;
 }
@@ -132,7 +121,6 @@ h1,h3{
     color: #94a3b8 !important;
 }
 
-/* NAVBAR */
 nav{
   background: #0f172a;
   padding: 12px 30px;
@@ -143,7 +131,6 @@ nav a{
     border-radius: 20px !important;
 }
 
-/* ANIMACION */
 @keyframes fadeIn{
     from{
         opacity: 0;
@@ -160,12 +147,7 @@ nav a{
 
 <body>
 
-<nav style="
-  background: #0f172a;
-  padding: 12px 30px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-">
-
+<nav>
   <div class="d-flex justify-content-between align-items-center flex-wrap">
 
     <div class="fw-bold text-white fs-5">
@@ -175,40 +157,39 @@ nav a{
     <div class="d-flex gap-2 flex-wrap mt-2 mt-lg-0">
 
       <a href="../../../index.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Inicio
       </a>
 
-      <a href="/src/features/CRUD/CRUD.html" class="btn btn-sm"
-         style="background: #22c55e; color: #000; border-radius: 20px;">
+      <a href="../CRUD/CRUD.html" class="btn btn-sm"
+         style="background: #22c55e; color: #000;">
         CRUD
       </a>
 
-      <a href="/src/features/Callback/callback.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+      <a href="../Callback/callback.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Callback
       </a>
 
       <a href="../promesas/promesas.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Promesas
       </a>
 
       <a href="../async_await/asyngawait.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Async
       </a>
 
-      <a href="/src/features/destructuracion_de_objetos/objdestructuring.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
-        Destructuración de objetos
+      <a href="../destructuracion_de_objetos/objdestructuring.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
+        Destructuración
       </a>
 
     </div>
 
   </div>
 </nav>
-
 
 <div class="container py-5">
 
@@ -227,7 +208,6 @@ nav a{
 
     <main class="row g-4">
 
-        <!-- FORM -->
         <div class="col-lg-4">
             <div class="card p-4 form-card">
                 <h5 class="mb-3">Registro de Usuario</h5>
@@ -257,7 +237,6 @@ nav a{
             </div>
         </div>
 
-        <!-- TABLA -->
         <div class="col-lg-8">
             <div class="card p-4 h-100">
                 <h6 class="mb-3 text-info">Usuarios registrados</h6>

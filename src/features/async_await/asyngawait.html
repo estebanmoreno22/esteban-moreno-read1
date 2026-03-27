@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="shortcut icon" href="../../../public/img/681300.png" type="image/x-icon">
@@ -18,25 +17,21 @@ body{
     color: #e5e7eb;
 }
 
-/* CARD */
 .card{
     background: #0f172a;
     border: 1px solid #1e293b;
     border-radius: 16px;
 }
 
-/* TITULO */
 .card-title{
     color: #22c55e;
     font-weight: bold;
 }
 
-/* LABEL */
 label{
     color: #ffffff;
 }
 
-/* INPUT */
 input{
     background: #020617 !important;
     border: 1px solid #334155 !important;
@@ -54,7 +49,6 @@ input:focus{
     box-shadow: 0 0 0 2px rgba(34,197,94,0.2);
 }
 
-/* BOTON */
 .btn-primary{
     background: #22c55e;
     border: none;
@@ -66,7 +60,6 @@ input:focus{
     background: #16a34a;
 }
 
-/* RESULTADO */
 #resultado{
     background: #020617;
     border: 1px solid #1e293b;
@@ -80,7 +73,6 @@ input:focus{
     min-width: 200px;
 }
 
-/* ANIMACION SUAVE */
 .card{
     animation: fadeIn 0.5s ease;
 }
@@ -95,19 +87,23 @@ input:focus{
         transform: translateY(0);
     }
 }
+
+nav{
+  background: #0f172a;
+  padding: 12px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a{
+    border-radius: 20px !important;
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR (NO TOCADA) -->
-<nav style="
-  background: #0f172a;
-  padding: 12px 30px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-">
-
+<nav>
   <div class="d-flex justify-content-between align-items-center flex-wrap">
 
     <div class="fw-bold text-white fs-5">
@@ -117,33 +113,33 @@ input:focus{
     <div class="d-flex gap-2 flex-wrap mt-2 mt-lg-0">
 
       <a href="../../../index.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Inicio
       </a>
 
-      <a href="/src/features/CRUD/CRUD.html" class="btn btn-sm"
-         style="background: #22c55e; color: #000; border-radius: 20px;">
+      <a href="../CRUD/CRUD.html" class="btn btn-sm"
+         style="background: #22c55e; color: #000;">
         CRUD
       </a>
 
-      <a href="/src/features/Callback/callback.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+      <a href="../Callback/callback.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Callback
       </a>
 
       <a href="../promesas/promesas.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Promesas
       </a>
 
       <a href="../async_await/asyngawait.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
         Async
       </a>
 
-      <a href="/src/features/destructuracion_de_objetos/objdestructuring.html" class="btn btn-sm text-white"
-         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
-        Destructuración de objetos
+      <a href="../destructuracion_de_objetos/objdestructuring.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">
+        Destructuración
       </a>
 
     </div>
