@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="../../../public/img/681300.png" type="image/x-icon">
+
+<title>CRUD</title>
+
+<style>
+body{
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* CONTENEDOR */
+.container{
+    animation: fadeIn 0.6s ease;
+}
+
+/* CARDS */
+.card{
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+}
+
+/* FORMULARIO */
+.form-card{
+    border-left: 4px solid #22c55e;
+}
+
+/* TEXTO FORMULARIO BLANCO */
+.form-card label,
+.form-card h5{
+    color: #ffffff;
+}
+
+/* INPUTS */
+input{
+    background: #020617 !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+input:focus{
+    border-color: #22c55e !important;
+    box-shadow: 0 0 0 2px rgba(34,197,94,0.2) !important;
+}
+
+input::placeholder{
+    color: #94a3b8 !important;
+}
+
+/* BOTONES */
+.btn-primary{
+    background: #22c55e;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary:hover{
+    background: #16a34a;
+}
+
+/* EXPORTAR */
+.btn-warning{
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-warning:hover{
+    background: #0284c7;
+}
+
+/* BORRAR */
+.btn-danger{
+    background: #ef4444;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-danger:hover{
+    background: #dc2626;
+}
+
+/* EDITAR */
+.btn-edit{
+    background: #a855f7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-edit:hover{
+    background: #9333ea;
+}
+
+/* TABLA */
+.table{
+    color: #e5e7eb;
+}
+
+.table thead{
+    background: #020617;
+    color: #94a3b8;
+}
+
+.table tbody tr{
+    border-bottom: 1px solid #1e293b;
+}
+
+.table tbody tr:hover{
+    background: rgba(34,197,94,0.05);
+}
+
+/* TITULOS */
+h1,h3{
+    color: #22c55e;
+}
+
+.text-info{
+    color: #94a3b8 !important;
+}
+
+/* NAVBAR */
+nav{
+  background: #0f172a;
+  padding: 12px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a{
+    border-radius: 20px !important;
+}
+
+/* ANIMACION */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav style="
+  background: #0f172a;
+  padding: 12px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+">
+
+  <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+    <div class="fw-bold text-white fs-5">
+      ⚡ CRUD PANEL
+    </div>
+
+    <div class="d-flex gap-2 flex-wrap mt-2 mt-lg-0">
+
+      <a href="../../../index.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Inicio
+      </a>
+
+      <a href="/src/features/CRUD/CRUD.html" class="btn btn-sm"
+         style="background: #22c55e; color: #000; border-radius: 20px;">
+        CRUD
+      </a>
+
+      <a href="/src/features/Callback/callback.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Callback
+      </a>
+
+      <a href="../promesas/promesas.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Promesas
+      </a>
+
+      <a href="../async_await/asyngawait.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Async
+      </a>
+
+      <a href="/src/features/destructuracion_de_objetos/objdestructuring.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Destructuración de objetos
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">CRUD Datos</h3>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-warning" id="exportBtn">
+                Exportar JSON
+            </button>
+            <button class="btn btn-danger" onclick="deleteAllUsers()">
+                Borrar Todo
+            </button>
+        </div>
+    </div>
+
+    <main class="row g-4">
+
+        <!-- FORM -->
+        <div class="col-lg-4">
+            <div class="card p-4 form-card">
+                <h5 class="mb-3">Registro de Usuario</h5>
+
+                <form id="dataForm">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="name" placeholder="Ingrese nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Documento</label>
+                        <input type="text" class="form-control" id="document" placeholder="Ingrese documento" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese email" required>
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+                        Guardar
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- TABLA -->
+        <div class="col-lg-8">
+            <div class="card p-4 h-100">
+                <h6 class="mb-3 text-info">Usuarios registrados</h6>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Documento</th>
+                                <th>Correo</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<footer class="text-center py-3 mt-4 text-secondary">
+   CRUD moderno ✨
+</footer>
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

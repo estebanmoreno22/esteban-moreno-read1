@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="../../../public/img/681300.png" type="image/x-icon">
+
+<title>Callback</title>
+
+<style>
+body{
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* NAVBAR */
+nav{
+  background: #0f172a;
+  padding: 12px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a{
+    border-radius: 20px !important;
+}
+
+/* CARD */
+.card{
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+}
+
+/* TITULO */
+.card-title{
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* LABEL */
+label{
+    color: #ffffff;
+}
+
+/* INPUT */
+input{
+    background: #020617 !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+input::placeholder{
+    color: #94a3b8;
+}
+
+input:focus{
+    border-color: #22c55e !important;
+    box-shadow: 0 0 0 2px rgba(34,197,94,0.2);
+}
+
+/* BOTON */
+.btn-primary{
+    background: #22c55e;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary:hover{
+    background: #16a34a;
+}
+
+/* RESULTADO BONITO */
+.result-box{
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+    color: #e5e7eb;
+}
+
+/* ANIMACION */
+.fade{
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav style="
+  background: #0f172a;
+  padding: 12px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+">
+
+  <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+    <div class="fw-bold text-white fs-5">
+      ⚡ CRUD PANEL
+    </div>
+
+    <div class="d-flex gap-2 flex-wrap mt-2 mt-lg-0">
+
+      <a href="../../../index.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Inicio
+      </a>
+
+      <a href="/src/features/CRUD/CRUD.html" class="btn btn-sm"
+         style="background: #22c55e; color: #000; border-radius: 20px;">
+        CRUD
+      </a>
+
+      <a href="/src/features/Callback/callback.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Callback
+      </a>
+
+      <a href="../promesas/promesas.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Promesas
+      </a>
+
+      <a href="../async_await/asyngawait.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Async
+      </a>
+
+      <a href="/src/features/destructuracion_de_objetos/objdestructuring.html" class="btn btn-sm text-white"
+         style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+        Destructuración de objetos
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+<main class="container mt-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+      <div class="card p-4 shadow-lg">
+
+        <h4 class="card-title text-center mb-4">🌍 Buscar País</h4>
+
+        <div class="mb-3">
+          <label>Nombre del país</label>
+          <input type="text" id="paisInput" class="form-control" placeholder="Ej: México, España, Canadá">
+        </div>
+
+        <button class="btn btn-primary w-100" onclick="buscarPais()">
+          Buscar
+        </button>
+
+        <div id="resultado" class="result-box fade mt-3">
+          Esperando búsqueda...
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+<script src="callback.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
